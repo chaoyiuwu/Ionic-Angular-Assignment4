@@ -13,17 +13,25 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button [routerLink]="['/user-booklists']" >My book lists</ion-button>
-
   <ion-grid>
-  <ion-row class="ion-align-items-center">
+    <ion-row class="ion-align-content-center, ion-align-items-center">
+      <ion-col size="12">
+        <ion-button [routerLink]="['/user-booklists']" class="goodReadsPrimaryButton">My book lists</ion-button>
+        </ion-col>
+        </ion-row>
+        <ion-row class="ion-align-content-center, ion-align-items-center">
+          <ion-col size="12">
+            <h3>Recommendations</h3>
+          </ion-col>
+        </ion-row>
+  <ion-row class="ion-align-items-center, ion-align-content-center">
         <ion-col size="12">
             <div *ngIf="!books">
             <ion-spinner></ion-spinner>
             </div>
     </ion-col>
   </ion-row>
-  <ion-row class="ion-align-items-center">
+  <ion-row>
     <ion-col size="12">
     <div *ngIf="books">
         <ion-list>         
