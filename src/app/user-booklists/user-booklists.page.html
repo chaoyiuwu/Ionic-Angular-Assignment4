@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Good Reads, Bad Writes
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="9">
+        <ion-input placeholder="New Book List Name" name="NewListName" [(ngModel)]="newListName"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" (click)="addNewList()">Add</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row size="auto">
+        <ion-col size="12">
+          <ion-list *ngIf="booklists && booklists.length != 0">
+            <ion-item *ngFor="let list of booklists">
+              <ion-grid>
+                <ion-row class="ion-align-items-start, ion-justify-content-end" >
+                  <ion-col size="6">
+                    {{list.name}}
+                    <button item-right (click)="addBookToList(list)">Add</button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-button (click)="viewListDetail(list)" color="tertiary" size="small">View</ion-button>
+                    <ion-button (click)="deleteBookList(list)" color="warning" size="small">Delete</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid> 
+            </ion-item>
+          </ion-list>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+</ion-content>

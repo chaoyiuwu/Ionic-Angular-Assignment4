@@ -25,3 +25,18 @@
 #container a {
   text-decoration: none;
 }
+
+ion-toolbar {
+  --background: #e9e5cd !important;
+}
+
+ion-title {
+  --color: #553b08;
+}
+
+.loadingClass {
+    --background: #222;
+    --spinner-color: #fff;
+  
+    color: #fff;
+}

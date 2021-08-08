@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Good Reads, Bad Writes
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="list">
+    <ion-grid>
+      <ion-row> <ion-col size="!2"> {{list.name}} </ion-col></ion-row>
+      <ion-row> <ion-col>
+
+        <ion-list>
+          <ion-item *ngFor="let book of list.books">
+            {{book.title}}
+            <button item-right (click)="deleteBook(book)">Delete</button>
+          </ion-item>
+        </ion-list>
+
+
+      </ion-col></ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
